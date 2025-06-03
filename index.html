@@ -31,16 +31,16 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 500px; /* Компактная ширина, как на телефоне */
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1rem;
         }
 
         .section {
             background-color: #3C2519; /* Тёмный кофейный для карточек */
             border-radius: 16px;
-            margin: 1.5rem 0;
-            padding: 2rem;
+            margin: 1rem 0;
+            padding: 1.5rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
         }
@@ -81,7 +81,6 @@
             grid-template-columns: 1fr 1fr;
             gap: 4px; /* Минимальный отступ между фото */
             width: 100%;
-            max-width: 600px; /* Ограничиваем размер коллажа */
             aspect-ratio: 1; /* Квадратная форма */
             border-radius: 12px; /* Закругленные углы для коллажа */
             overflow: hidden; /* Обрезаем углы изображений */
@@ -105,7 +104,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 0 8px 8px 0; /* Закругление справа для верхнего и нижнего */
+            border-radius: 0 8px 8px 0; /* Закругление справа */
         }
 
         footer {
@@ -113,17 +112,17 @@
             padding: 1rem;
             background-color: #3C2519;
             color: #F5E8D3;
-            margin-top: 7rem; <!--Вернуть 2 когда будут рисунки-->
+            margin-top: 2rem; /* Исправлено с 7rem на 2rem */
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 500px) {
             .container {
-                padding: 1rem;
+                padding: 0.5rem;
             }
 
             .section {
-                margin: 1rem;
-                padding: 1.5rem;
+                margin: 0.5rem;
+                padding: 1rem;
             }
 
             header h1 {
@@ -134,7 +133,6 @@
                 grid-template-columns: 1fr;
                 grid-template-rows: auto auto auto;
                 aspect-ratio: auto; /* Убираем фиксированный квадрат на мобильных */
-                max-width: 100%;
             }
 
             .collage .large-img {
@@ -155,25 +153,26 @@
     <header>
         <h1>(=^･ω･^=)</h1>
     </header>
-    
+
+    <div class="container">
         <div class="section">
             <h2>Фоткаю город, природу и не только</h2>
             <div class="collage">
-                <img class="large-img" src="https://via.placeholder.com/400x400?text=Фото+1" alt="Большая фотография">
+                <img class="large-img" src="images/photo/big-picture-1.jpg" alt="Большая фотография" loading="lazy">
                 <div class="small-imgs">
-                    <img class="small-img" src="https://via.placeholder.com/200x200?text=Фото+2" alt="Малая фотография 1">
-                    <img class="small-img" src="https://via.placeholder.com/200x200?text=Фото+3" alt="Малая фотография 2">
+                    <img class="small-img" src="images/photo/small-picture-2.jpg" alt="Малая фотография 1" loading="lazy">
+                    <img class="small-img" src="images/photo/small-picture-3.jpg" alt="Малая фотография 2" loading="lazy">
                 </div>
             </div>
-            <p> </p>
+            <p>Мои фотографии запечатлевают уникальные моменты городской жизни, красоту природы и многое другое.</p>
             <a href="https://tiktok.com/@emilchik_kun" target="_blank">Мои работы</a>
         </div>
     </div>
-    
-    <div class="section">
+
+    <!-- <div class="section">
             <h2>Работаю над игрой</h2>
             <div class="collage">
-                <img class="large-img" src="https://via.placeholder.com/400x400?text=Проект+1" alt="Большой проект">
+                <img class="large-img" src="images/game/big-game-1.jpg" alt="Большой проект">
                 <div class="small-imgs">
                     <img class="small-img" src="https://via.placeholder.com/200x200?text=Проект+2" alt="Малый проект 1">
                     <img class="small-img" src="https://via.placeholder.com/200x200?text=Проект+3" alt="Малый проект 2">
@@ -181,14 +180,14 @@
             </div>
             <p> </p>
             <a href="https://gamejolt.com/@emilchiks" target="_blank">Игра на Game Jolt</a>
-        </div>
+        </div> -->
 
     <footer>
         <p>Эмиль Башаров <br> 2025</p>
     </footer>
 
     <script>
-        // Плавная прокрутка (если добавите навигацию)
+        // Плавная прокрутка
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
